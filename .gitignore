@@ -4,8 +4,8 @@
 ### Renpy ###
 # Don't track content of these folders #
 ########################################
-*/cache/
-*/saves/
+**/cache/**
+**/saves/**
 
 
 # Compiled source #
