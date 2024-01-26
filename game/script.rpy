@@ -15,6 +15,20 @@ define pet = Character("Wuffeli")
 
 label start:
 
+    # declare variables
+    python:
+        current_day = 1
+
+        max_daily_actions = 3
+        daily_actions = 3
+
+        hunger_food_points = 4
+        fitness_points = 4
+        happiness_points = 4
+
+        secret_cleanliness_points = 5
+        secret_sleepiness_energy_points = 5    
+
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -27,7 +41,7 @@ label start:
 
     # These display lines of dialogue.
 
-    narrator "It is morning, and you woke up refreshed."
+    narrator "It is morning, and you wake up refreshed."
 
     show human happy at leftish
 
@@ -44,5 +58,7 @@ label start:
     human "o no"
 
     # This ends the game.
+
+    jump scene_selector
 
     return

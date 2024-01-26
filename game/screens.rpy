@@ -82,6 +82,28 @@ style frame:
 ################################################################################
 
 
+## Stats screen
+################################################################################
+## 
+## A screen overlay that's always visible
+## 
+
+screen stats():
+    zorder 100
+    if quick_menu:
+        vbox:
+            xalign 0.01
+            yalign 0.05
+            
+            text _("DAY: " + str(current_day))
+            text _("")
+            text _("Hunger:      " +str(hunger_food_points))
+            text _("Fitness:      " +str(fitness_points))
+            text _("Happiness: " +str(happiness_points))
+
+init python:
+    config.overlay_screens.append("stats")
+
 ## Say screen ##################################################################
 ##
 ## The say screen is used to display dialogue to the player. It takes two
