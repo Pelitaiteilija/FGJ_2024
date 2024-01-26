@@ -10,6 +10,8 @@ label scene_selector:
 
   # pick an event, or start a normal day
 
+
+
   if current_day == 10:
     $ current_day = 3
     jump day_3

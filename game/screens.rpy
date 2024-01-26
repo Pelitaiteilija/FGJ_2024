@@ -87,7 +87,6 @@ style frame:
 ## 
 ## A screen overlay that's always visible
 ## 
-
 screen stats():
     zorder 100
     if quick_menu:
@@ -95,7 +94,7 @@ screen stats():
             xalign 0.01
             yalign 0.05
             
-            text _("DAY: " + str(current_day))
+            text _("DAY: " + str(current_day) +", " + weekdays[current_day%7])
             text _("")
             text _("Hunger:      " +str(hunger_food_points))
             text _("Fitness:      " +str(fitness_points))
