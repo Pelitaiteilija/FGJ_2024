@@ -17,6 +17,16 @@ label start:
 
     # declare variables
     python:
+        weekdays = {
+            0:"Sunday",
+            1:"Monday",
+            2:"Tuesday",
+            3:"Wednesday",
+            4:"Thursday",
+            5:"Friday",
+            6:"Saturday"
+        }
+
         current_day = 1
 
         max_daily_actions = 3
