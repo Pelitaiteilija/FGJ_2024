@@ -4,7 +4,7 @@
 # name of the character.
 
 transform leftish:
-    xcenter 0.25
+    xcenter 0.250
 
 define narrator = Character("")
 define human = Character("You")
