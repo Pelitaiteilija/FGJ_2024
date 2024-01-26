@@ -4,8 +4,8 @@
 ### Renpy ###
 # Don't track content of these folders #
 ########################################
-/game/cache/**
-/game/saves/**
+/game/cache/*
+/game/saves/*
 
 
 # Compiled source #
@@ -27,5 +27,10 @@
 /errors.txt
 /traceback.txt
 /files.txt
+
+# Windows files                      #
+######################################
+**/Thumbs.db
+**/.DS_Store
 
 # End of https://www.toptal.com/developers/gitignore/api/renpy
