@@ -71,7 +71,7 @@ style energymeter_UI_text_disabled:
   size 150
   color ("#0c322155")  
 
-define game_ui_energymeter_visible = False
+define game_ui_energymeter_visible = True
 
 init python:
   config.overlay_screens.append("energymeter_UI_screen")

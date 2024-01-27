@@ -39,6 +39,7 @@ init python:
       # varmista että valittu eventti on validi, ja jos on, kutsu sitä
       if chosen_event != "" and chosen_event != None:
         renpy.call(chosen_event)
+        return
     # jos eventtejä ei kutsuttu, kutsu oletuseventtiä
     renpy.call(default_event)
 
