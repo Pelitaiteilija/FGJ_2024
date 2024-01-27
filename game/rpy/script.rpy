@@ -45,17 +45,17 @@ label start:
 
     narrator "It is morning, and you wake up refreshed."
 
-    show human happy at left
+    show human at left
 
     human "I wonder if my pet Wuffeli has been a good boy?"
 
     show human happy at left
-    show placeholder wuffeli at topright:
+    show hairball at topright:
 
     pet "wrrrwrwroffof r"
 
     show human shocked at left
-    show placeholder wuffeli at topright
+    show hairball angry at topright
 
     human "o no"
 
