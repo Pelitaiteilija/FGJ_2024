@@ -48,12 +48,14 @@ screen stats_UI_overlay():
           xsize 250
           text _("DAY: ")
           text _(weekdays[current_day%7])
+          text _("Actions: " + "◇" * (daily_actions))
           text _("")
           text _("Fullness:" )
           text _("Happiness:")
           text _("Fitness:")          
         vbox:
           text _(str(current_day))
+          text _("")
           text _("")
           text _("")
           text _(str(hunger_food_points))

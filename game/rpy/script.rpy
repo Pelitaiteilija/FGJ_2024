@@ -63,4 +63,4 @@ label start:
 
     jump scene_selector
 
-    return
+    

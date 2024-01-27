@@ -7,4 +7,4 @@ label basic_day:
 
   human "wow"
 
-jump scene_selector
+  return

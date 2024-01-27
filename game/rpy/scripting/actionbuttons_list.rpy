@@ -29,8 +29,7 @@ init python:
     TextButtonData("eat", "Fast food", "actionbutton_eat_trash", "AdjustStats(1, 2, -1)"),
     TextButtonData("activity", "Jogging", "actionbutton_activity_jogging", "AdjustStats(0, 1, 2)"),
     TextButtonData("activity", "Nutflix", "actionbutton_activity_nutflix", "AdjustStats(0, 2, -2)"),
-    TextButtonData("clean", "Cleaning", "actionbutton_cleaning_cleaning", "AdjustStatsAndTrash(-1, 0, 1, -1)"),
-    TextButtonData("rest", "Sleep", "actionbutton_resting_sleep", "AdjustStats(-1, 0, 1)")
+    TextButtonData("clean", "Cleaning", "actionbutton_cleaning_cleaning", "AdjustStatsAndTrash(-1, 0, 1, -1)")
   ]
 
   for button in text_buttons:

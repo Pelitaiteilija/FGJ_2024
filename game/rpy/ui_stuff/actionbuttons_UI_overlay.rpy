@@ -44,14 +44,14 @@ screen actionbuttons_UI_overlay():
         # $ dynamic_category = "eat"
         #action Show("dynamic_action_overlay")
         action [
-          SetVariable("dynamic_category", "eat"), 
+          SetVariable("dynamic_category", "eat"),
           Show("dynamic_action_overlay")
         ]
 
       textbutton _("Do stuff"):
         id "actionbutton_activity"
         action [
-          SetVariable("dynamic_category", "activity"), 
+          SetVariable("dynamic_category", "activity"),
           Show("dynamic_action_overlay")
         ]
 
@@ -62,12 +62,10 @@ screen actionbuttons_UI_overlay():
           Show("dynamic_action_overlay")
         ]
 
-      textbutton _("Rest"):
-        id "actionbutton_sleep"
-        action [
-          SetVariable("dynamic_category", "rest"), 
-          Show("dynamic_action_overlay")
-        ]
+      textbutton _("Sleep"):
+        id "actionbutton_rest"
+        action Jump("scene_selector")
+  
 
 #
 #      imagebutton:

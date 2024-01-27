@@ -27,10 +27,11 @@ screen dynamic_action_overlay():
         if button.category ==  dynamic_category:
           textbutton _(button.displaytext):
             id button.id
-            action [
+            action If (daily_actions > 0, [ 
+              SetVariable("daily_actions", daily_actions-1),
               Function(call_custom_function, button.actionstring ),
               Hide("dynamic_action_overlay")
-            ]
+            ])
 
 style dynamic_actionbuttons_overlay_button_close_text:
   color ("#00F")
