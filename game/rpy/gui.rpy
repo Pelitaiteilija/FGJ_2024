@@ -35,7 +35,7 @@ define gui.idle_color = '#707070'
 define gui.idle_small_color = '#606060'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#006666'
+define gui.hover_color = '#004433'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -230,7 +230,7 @@ define gui.slot_button_text_size = 21
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
-define gui.slot_button_text_selected_hover_color = gui.hover_color
+define gui.slot_button_text_selected_hover_color = (gui.hover_color)
 
 ## The width and height of thumbnails used by the save slots.
 define config.thumbnail_width = 384

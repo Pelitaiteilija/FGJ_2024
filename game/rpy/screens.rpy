@@ -77,54 +77,11 @@ style frame:
 
 
 
-
-
 ################################################################################
 ## In-game screens
 ################################################################################
 
 
-## Stats screen
-################################################################################
-## 
-## A screen overlay that's always visible
-## 
-screen stats():
-    style_prefix "statsbox"
-    zorder 100
-
-    vbox:
-        id "statsbox"
-        xalign 0.01
-        yalign 0.05
-        
-        text _("DAY: " + str(current_day) +", " + weekdays[current_day%7])
-        text _("")
-        text _("Hunger:      " +str(hunger_food_points))
-        text _("Fitness:      " +str(fitness_points))
-        text _("Happiness: " +str(happiness_points))
-
-init python:
-    config.overlay_screens.append("stats")
-
-## STATS BOX WHY DON'T YOU WORK
-
-style statsbox:
-    xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
-
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-
-style statsbox is default
-
-style statsbox:
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    padding gui.frame_borders.padding
-    text_align 1.0
-    top_bar Frame("gui/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
 
 ## Say screen ##################################################################
 ##
