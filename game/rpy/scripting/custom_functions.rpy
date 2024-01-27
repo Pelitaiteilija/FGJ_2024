@@ -17,17 +17,19 @@ init python:
     hunger_food_points -= 1
 
     # start a new day 
-
+    global bg_is_night
+    bg_is_night = False
     # increase day counter
     current_day += 1
     #reset daily actions
     daily_actions = max_daily_actions
+    renpy.call("new_day")
 
-  def hide_dynamic_action_overlay():
-    renpy.hide("dynamic_action_overlay")
+  def hide_dynamic_actionbuttons_UI_screen():
+    renpy.hide("dynamic_actionbuttons_UI_screen")
 
   def get_random_event(events_list, default_event):
-    hide_dynamic_action_overlay()
+    hide_dynamic_actionbuttons_UI_screen()
     available_events = events_list
     if len(available_events) > 0:
       # valitse eventti, poista se eventtilistasta
@@ -39,3 +41,32 @@ init python:
         renpy.call(chosen_event)
     # jos eventtejä ei kutsuttu, kutsu oletuseventtiä
     renpy.call(default_event)
+
+  pet_mood = {
+    0: "furious",
+    1: "furious",
+    2: "furious",
+    3: "angry", 
+    4: "sad", 
+    5: "angry", 
+    6: "sad",
+    7: "neutral",
+    8: "sad",
+    9: "neutral",
+    10: "neutral",
+    11: "happy",
+    12: "neutral",
+    13: "happy",
+    14: "happy",
+    15: "happy",
+    16: "happy"
+  }
+
+  def get_random_pet_mood(mood_score):
+    mood_score += renpy.random.randint(-4, 4)
+    if mood_score < 0:
+      mood_score = 0
+    elif mood_score >= len(pet_mood):
+      mood_score = len(pet_mood) -1
+    print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
+    return pet_mood[mood_score]    

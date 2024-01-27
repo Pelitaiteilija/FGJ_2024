@@ -4,7 +4,9 @@ label end_of_day:
   jump scene_selector
 
 label scene_selector:
-  if current_day >= 7:
+  if current_day == 2:
+    call day_2
+  elif current_day >= 7:
     jump final_day
     return
   else:
@@ -13,6 +15,18 @@ label scene_selector:
   jump scene_make_a_choice
 
 label scene_make_a_choice:
+  python: 
+    global bg_is_night
+    # if player has made at least two actions, it is night
+    night = max_daily_actions - daily_actions >= 2
+
+  if night and not bg_is_night:
+    $ bg_is_night = True
+    with None
+    show bg livingroom night
+    with dissolve
+    hemmo "It's late."
+
   if current_day >= 7:
     return
 
@@ -25,5 +39,5 @@ label scene_make_a_choice:
     #show hairball at random_pos
 
 
-  human "what should I do next?"
+  hemmo "Hmm, what should I do next?"
   jump scene_make_a_choice

@@ -267,6 +267,7 @@ init python:
 
 default quick_menu = True
 
+
 style quick_button is default
 style quick_button_text is button_text
 

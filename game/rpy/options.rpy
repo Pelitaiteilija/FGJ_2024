@@ -7,7 +7,7 @@
 
 ## Basics ######################################################################
 
-## A human-readable name of the game. This is used to set the default window
+## A hemmo-readable name of the game. This is used to set the default window
 ## title, and shows up in the interface and error reports.
 ##
 ## The _() surrounding the string marks it as eligible for translation.

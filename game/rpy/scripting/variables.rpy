@@ -9,35 +9,6 @@ init python:
     6:"Saturday"
   }
 
-  pet_mood = {
-    0: "furious",
-    1: "furious",
-    2: "furious",
-    3: "angry", 
-    4: "sad", 
-    5: "angry", 
-    6: "sad",
-    7: "neutral",
-    8: "sad",
-    9: "neutral",
-    10: "neutral",
-    11: "happy",
-    12: "neutral",
-    13: "happy",
-    14: "happy",
-    15: "happy",
-    16: "happy"
-  }
-
-  def get_random_pet_mood(mood_score):
-    mood_score += renpy.random.randint(-4, 4)
-    if mood_score < 0:
-      mood_score = 0
-    elif mood_score > len(pet_mood):
-      mood_score = len(pet_mood)
-    print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
-    return pet_mood[mood_score]
-
   current_day = 1
 
   max_daily_actions = 3
@@ -49,8 +20,13 @@ init python:
 
   pet_name = "Wuffeli"
 
+  
+
   secret_cleanliness_points = 5
   secret_sleepiness_energy_points = 5
+
+  # used to check whether it's night or day
+  bg_is_night = False
 
   # used to randomize hairball's position in rooms
   random_pos = home_center
@@ -62,7 +38,7 @@ init python:
     global current_day, max_daily_actions, daily_actions
     global hunger_food_points, happiness_points, fitness_points
     global pet_name
-    global secret_cleanliness_points, secret_sleepiness_energy_points
+    global secret_cleanliness_points, secret_sleepiness_energy_points, bg_is_night
 
     current_day = 1
     max_daily_actions = 3
@@ -75,3 +51,4 @@ init python:
     pet_name = "Wuffeli"
     secret_cleanliness_points = 5
     secret_sleepiness_energy_points = 5
+    bg_is_night

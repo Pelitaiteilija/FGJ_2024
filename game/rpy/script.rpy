@@ -24,7 +24,7 @@ transform bottomright:
 
 
 define narrator = Character("")
-define human = Character("You")
+define hemmo = Character("You")
 define hairball = Character("Wuffeli")
 
 
@@ -37,10 +37,42 @@ label start:
         init_food_events()
         init_sleeping_events()
 
+    $ game_ui_visible = False
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+    scene bg livingroom day
+
+    with fade
+
+    hemmo "I was just minding my own business..."
+    show hairball angry at home_center
+
+    hemmo "I was just minding my own business when this disgusting little ball of hair showed up."
+    show hairball angry flipped at home_center
+    hemmo "I don't know where it came from."
+    hemmo "But it doesn't matter any more."
+    show hairball furious at home_left_corner
+    hemmo "I tried to toss it out several times..."
+    with None
+    scene bg livingroom night
+    show hairball angry at home_mirror
+    with fade
+    hemmo "...but it always came back."
+
+    with None
+    hemmo "Eventually, I just had to accept that I had new, hairy roommate."
+    show hairball sad at home_right
+    
+    hemmo "It was kind of cute, sometimes, and looked harmless enough."
+    hemmo "I figured it wasn't worth the trouble to keep chasing it around the house."
+
+    hemmo "Since it was going to live with me, I decided to give it a name."
+
+    # TODO: lisää joku nimenanto-prompti tai jotain
+
+    with dissolve
     scene bg livingroom day
 
     # This shows a character sprite. A placeholder is used, but you can
@@ -51,7 +83,7 @@ label start:
 
     narrator "It is morning, and you wake up refreshed."
 
-    human "I wonder if my pet [pet_name] has been a good boy?"
+    hemmo "I wonder if my pet [pet_name] has been a good boy?"
 
     show hairball furious at home_topright:
     with dissolve
@@ -59,8 +91,8 @@ label start:
 
     hairball "wrrrwrwroffof r"
 
-    human "O!"
-    human "Oh no!"
+    hemmo "O!"
+    hemmo "Oh no!"
 
     with None
     show hairball angry at home_center
@@ -68,7 +100,7 @@ label start:
     narrator "A few hectic moments later..."
     
     
-
+    $ game_ui_visible = True
     jump scene_make_a_choice
 
     

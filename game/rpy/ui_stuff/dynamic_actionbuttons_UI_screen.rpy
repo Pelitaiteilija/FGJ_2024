@@ -1,9 +1,9 @@
 
-screen dynamic_action_overlay():
+screen dynamic_actionbuttons_UI_screen():
   zorder 100
   modal True
   frame:
-    id "dynamic_action_overlay_frame"
+    id "dynamic_actionbuttons_UI_screen_frame"
     # note! ADD SOLID and BACKGROUND SOLID work differently!
     # add solid has transparency, but only "sees" background color, opaque white by default!
     background Solid ("#0004")
@@ -21,7 +21,7 @@ screen dynamic_action_overlay():
 
       textbutton _("↪"):
         id "button_close"
-        action Hide("dynamic_action_overlay")
+        action Hide("dynamic_actionbuttons_UI_screen")
 
       for button in ButtonsDB.textButtons:
         if button.category ==  dynamic_category:
@@ -30,7 +30,7 @@ screen dynamic_action_overlay():
             action If (daily_actions > 0, [ 
               SetVariable("daily_actions", daily_actions-1),
               Function(call_custom_function, button.action_string ),
-              Hide("dynamic_action_overlay"),
+              Hide("dynamic_actionbuttons_UI_screen"),
               If (button.event_label != "", Function(renpy.call, button.event_label))
             ])
 
