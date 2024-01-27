@@ -37,6 +37,14 @@ screen actionbuttons_UI_overlay():
       id "actionbuttons_overlay_vbox"
       style_prefix "actionbuttons_overlay"
 
+
+      textbutton _("Do stuff"):
+        id "actionbutton_activity"
+        action [
+          SetVariable("dynamic_category", "activity"),
+          Show("dynamic_action_overlay")
+        ]
+
       textbutton _("Eat stuff"):
         id "actionbutton_eat"
         #hovered Function(renpy.showDynamicActionButtonsOverlay)
@@ -45,13 +53,6 @@ screen actionbuttons_UI_overlay():
         #action Show("dynamic_action_overlay")
         action [
           SetVariable("dynamic_category", "eat"),
-          Show("dynamic_action_overlay")
-        ]
-
-      textbutton _("Do stuff"):
-        id "actionbutton_activity"
-        action [
-          SetVariable("dynamic_category", "activity"),
           Show("dynamic_action_overlay")
         ]
 
@@ -89,7 +90,7 @@ style actionbuttons_overlay_vbox:
   spacing 20
 
 style actionbuttons_overlay_button:
-  xsize 200
+  xsize 250
   ysize 100
   background Frame("gui/thoughtbubble.png",gui.button_borders, tile=gui.button_tile)
   #hover_background Frame("gui/bubble.png",gui.button_borders, tile=gui.button_tile) 

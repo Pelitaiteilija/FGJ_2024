@@ -31,6 +31,12 @@ define hairball = Character("Wuffeli")
 # The game starts here.
 
 label start:
+    python:
+        init_activity_events()
+        init_cleaning_events()
+        init_food_events()
+        init_sleeping_events()
+
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the

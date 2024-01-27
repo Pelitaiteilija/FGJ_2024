@@ -38,7 +38,6 @@ init python:
     print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
     return pet_mood[mood_score]
 
-
   current_day = 1
 
   max_daily_actions = 3
@@ -59,3 +58,20 @@ init python:
   # used to randomize hairball's emotion
   hairball_emotion = "angry"
 
+  def init_basic_variables():
+    global current_day, max_daily_actions, daily_actions
+    global hunger_food_points, happiness_points, fitness_points
+    global pet_name
+    global secret_cleanliness_points, secret_sleepiness_energy_points
+
+    current_day = 1
+    max_daily_actions = 3
+    daily_actions = 3
+
+    hunger_food_points = 4
+    happiness_points = 4
+    fitness_points = 4
+
+    pet_name = "Wuffeli"
+    secret_cleanliness_points = 5
+    secret_sleepiness_energy_points = 5

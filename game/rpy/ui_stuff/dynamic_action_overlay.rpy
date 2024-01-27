@@ -29,15 +29,16 @@ screen dynamic_action_overlay():
             id button.id
             action If (daily_actions > 0, [ 
               SetVariable("daily_actions", daily_actions-1),
-              Function(call_custom_function, button.actionstring ),
-              Hide("dynamic_action_overlay")
+              Function(call_custom_function, button.action_string ),
+              Hide("dynamic_action_overlay"),
+              If (button.event_label != "", Function(renpy.call, button.event_label))
             ])
 
 style dynamic_actionbuttons_overlay_button_close_text:
   color ("#00F")
 
 init python:
-  def call_custom_function(actionstring):
+  def call_custom_function(action_string):
     # action string is in the format "functionCall(1, 2, 3)"
     # assume the string has both ( and ) characters
     # find the first (
@@ -45,10 +46,10 @@ init python:
     # the parameters are between the () characters, separated by comma
     # parameters are extracted as a list
     try: 
-      parenthesis_index = actionstring.find('(')
+      parenthesis_index = action_string.find('(')
       print("this is a test")
-      function_name = actionstring[:parenthesis_index]
-      parameters_string = actionstring[parenthesis_index + 1:-1]
+      function_name = action_string[:parenthesis_index]
+      parameters_string = action_string[parenthesis_index + 1:-1]
       parameters = [p.strip() for p in parameters_string.split(',')]
 
       if function_name in globals() and callable(globals()[function_name]):
@@ -56,6 +57,6 @@ init python:
         func_to_call(*parameters)
     except Exception as e:
       print(f"Error calling function '{function_name}' with parameters '{parameters}: {e}")
-      print(f"Original string: {actionstring}")
+      print(f"Original string: {action_string}")
       if (function_name not in globals()):
         print(f"{function_name} doesn't exist in globals!" )

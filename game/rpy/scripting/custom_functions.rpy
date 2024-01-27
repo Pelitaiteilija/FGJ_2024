@@ -22,3 +22,20 @@ init python:
     current_day += 1
     #reset daily actions
     daily_actions = max_daily_actions
+
+  def hide_dynamic_action_overlay():
+    renpy.hide("dynamic_action_overlay")
+
+  def get_random_event(events_list, default_event):
+    hide_dynamic_action_overlay()
+    available_events = events_list
+    if len(available_events) > 0:
+      # valitse eventti, poista se eventtilistasta
+      chosen_event = renpy.random.choice(available_events)
+      print(f"Removing activated event '{chosen_event}' from list: '{events_list}'")
+      events_list.remove(chosen_event)
+      # varmista että valittu eventti on validi, ja jos on, kutsu sitä
+      if chosen_event != "" and chosen_event != None:
+        renpy.call(chosen_event)
+    # jos eventtejä ei kutsuttu, kutsu oletuseventtiä
+    renpy.call(default_event)
