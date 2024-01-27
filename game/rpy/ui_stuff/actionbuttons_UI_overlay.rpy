@@ -64,7 +64,7 @@ screen actionbuttons_UI_overlay():
 
       textbutton _("Sleep"):
         id "actionbutton_rest"
-        action Jump("scene_selector")
+        action Jump("end_of_day")
   
 
 #

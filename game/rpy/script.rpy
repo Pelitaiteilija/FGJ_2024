@@ -59,8 +59,6 @@ label start:
 
     human "o no"
 
-    # This ends the game.
-
-    jump scene_selector
+    jump scene_make_a_choice
 
     
