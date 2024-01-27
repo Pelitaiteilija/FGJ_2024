@@ -1,7 +1,10 @@
 label scene_selector:
+  # handle end of current day
+  $ secret_cleanliness_points -= 1
+  $ fitness_points -= 1
+  $ hunger_food_points -= 1
+
   # start a new day 
-  hide placeholder wuffeli
-  hide human happy
 
   # increase day counter
   $ current_day += 1
@@ -14,6 +17,9 @@ label scene_selector:
 
   if current_day == 10:
     $ current_day = 3
+    $ fitness_points = 5
+    $ hunger_food_points = 5
+    $happiness_points -= 1
     jump day_3
 
   jump basic_day
