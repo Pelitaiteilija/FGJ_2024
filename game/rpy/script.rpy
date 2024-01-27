@@ -75,31 +75,8 @@ label start:
     with dissolve
     scene bg livingroom day
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    narrator "It is morning, and you wake up feeling better than in a long time."
 
-    # These display lines of dialogue.
-
-    narrator "It is morning, and you wake up refreshed."
-
-    hemmo "I wonder if my pet [pet_name] has been a good boy?"
-
-    show hairball furious at home_topright:
-    with dissolve
-    
-
-    hairball "wrrrwrwroffof r"
-
-    hemmo "O!"
-    hemmo "Oh no!"
-
-    with None
-    show hairball angry at home_center
-    with fade
-    narrator "A few hectic moments later..."
-    
-    
     $ game_ui_visible = True
     jump scene_make_a_choice
 
