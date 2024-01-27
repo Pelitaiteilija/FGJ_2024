@@ -3,6 +3,7 @@ label basic_day:
   scene bg livingroom day
 
   python:
+    global random_pos
     random_positions = [home_center, home_couch, home_kitchen_table, home_left, home_left_corner, home_mirror, home_right, home_topleft, home_topright]
 
     random_pos = renpy.random.choice(random_positions)

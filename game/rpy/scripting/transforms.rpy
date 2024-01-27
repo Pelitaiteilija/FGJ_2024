@@ -19,9 +19,9 @@ transform home_couch:
   ycenter 0.69
 
 transform home_center:
-  zoom 0.75
+  zoom 0.76
   xcenter 0.53
-  ycenter 0.51
+  ycenter 0.52
 
 transform home_topleft:
   zoom 0.45

@@ -45,19 +45,23 @@ label start:
 
     narrator "It is morning, and you wake up refreshed."
 
-    show human at left
+    human "I wonder if my pet [pet_name] has been a good boy?"
 
-    human "I wonder if my pet Wuffeli has been a good boy?"
-
-    show human happy at left
-    show hairball at topright:
+    show hairball at home_topright:
+    with dissolve
+    
 
     pet "wrrrwrwroffof r"
 
-    show human shocked at left
-    show hairball angry at topright
+    human "O!"
+    human "Oh no!"
 
-    human "o no"
+    with None
+    show hairball at home_center
+    with fade
+    narrator "A few hectic moments later..."
+    
+    
 
     jump scene_make_a_choice
 
