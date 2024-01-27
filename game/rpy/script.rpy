@@ -25,7 +25,7 @@ transform bottomright:
 
 define narrator = Character("")
 define human = Character("You")
-define pet = Character("Wuffeli")
+define hairball = Character("Wuffeli")
 
 
 # The game starts here.
@@ -47,17 +47,17 @@ label start:
 
     human "I wonder if my pet [pet_name] has been a good boy?"
 
-    show hairball at home_topright:
+    show hairball furious at home_topright:
     with dissolve
     
 
-    pet "wrrrwrwroffof r"
+    hairball "wrrrwrwroffof r"
 
     human "O!"
     human "Oh no!"
 
     with None
-    show hairball at home_center
+    show hairball angry at home_center
     with fade
     narrator "A few hectic moments later..."
     

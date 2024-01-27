@@ -1,13 +1,43 @@
 init python:
   weekdays = {
-      0:"Sunday",
-      1:"Monday",
-      2:"Tuesday",
-      3:"Wednesday",
-      4:"Thursday",
-      5:"Friday",
-      6:"Saturday"
+    0:"Sunday",
+    1:"Monday",
+    2:"Tuesday",
+    3:"Wednesday",
+    4:"Thursday",
+    5:"Friday",
+    6:"Saturday"
   }
+
+  pet_mood = {
+    0: "furious",
+    1: "furious",
+    2: "furious",
+    3: "angry", 
+    4: "sad", 
+    5: "angry", 
+    6: "sad",
+    7: "neutral",
+    8: "sad",
+    9: "neutral",
+    10: "neutral",
+    11: "happy",
+    12: "neutral",
+    13: "happy",
+    14: "happy",
+    15: "happy",
+    16: "happy"
+  }
+
+  def get_random_pet_mood(mood_score):
+    mood_score += renpy.random.randint(-4, 4)
+    if mood_score < 0:
+      mood_score = 0
+    elif mood_score > len(pet_mood):
+      mood_score = len(pet_mood)
+    print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
+    return pet_mood[mood_score]
+
 
   current_day = 1
 
@@ -25,4 +55,7 @@ init python:
 
   # used to randomize hairball's position in rooms
   random_pos = home_center
+
+  # used to randomize hairball's emotion
+  hairball_emotion = "angry"
 

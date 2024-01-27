@@ -5,7 +5,7 @@
 transform home_kitchen_table:
   zoom 0.6
   xcenter 0.40
-  ycenter 0.43
+  ycenter 0.445
 
 transform home_right:
   zoom 0.9
@@ -31,8 +31,8 @@ transform home_topleft:
 
 transform home_mirror:
   zoom 0.73
-  xcenter 0.25
-  ycenter 0.5
+  xcenter 0.22
+  ycenter 0.49
 
 transform home_left:
   zoom 0.70

@@ -16,13 +16,13 @@ label scene_make_a_choice:
   if current_day >= 7:
     return
 
-  python:
-    flipped = renpy.random.random() < 0.5
-    print(renpy.random.random())
+  $ flipped = renpy.random.random() < 0.5
   if flipped:
-    show hairball flipped at random_pos
+      $ renpy.show(f"hairball {hairball_emotion} flipped", at_list=[random_pos])
+    # show hairball flipped at random_pos
   else:
-    show hairball at random_pos
+      $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_pos])
+    #show hairball at random_pos
 
 
   human "what should I do next?"
