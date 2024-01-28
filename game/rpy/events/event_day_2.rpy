@@ -7,7 +7,7 @@ label day_2:
   hemmo "I wonder what that hairball does in its free time..."
   hemmo "Well, let's see if my new pet [pet_name] has been a good boy?"
 
-  show hairball furious at home_topright:
+  show hairball furious at home_topright
   with dissolve
   
 

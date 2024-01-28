@@ -1,4 +1,8 @@
 label end_of_day:
+  narrator "You're tired, and decide to go to bed"
+  hemmo "Alright, [pet_name], time to catch some sleep."
+  hemmo "Good night."
+
   $ EndCurrentDay()
   # pick an event, or start a normal day
   jump scene_selector
@@ -32,11 +36,11 @@ label scene_make_a_choice:
 
   $ flipped = renpy.random.random() < 0.5
   if flipped:
-      $ renpy.show(f"hairball {hairball_emotion} flipped", at_list=[random_pos])
-    # show hairball flipped at random_pos
+      $ renpy.show(f"hairball {hairball_emotion} flipped", at_list=[random_home_pos])
+    # show hairball flipped at random_home_pos
   else:
-      $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_pos])
-    #show hairball at random_pos
+      $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_home_pos])
+    #show hairball at random_home_pos
 
 
   hemmo "Hmm, what should I do next?"

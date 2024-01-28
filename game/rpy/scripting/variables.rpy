@@ -29,7 +29,7 @@ init python:
   bg_is_night = False
 
   # used to randomize hairball's position in rooms
-  random_pos = home_center
+  random_home_pos = home_center
 
   # used to randomize hairball's emotion
   hairball_emotion = "angry"
