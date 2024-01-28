@@ -19,5 +19,13 @@ label show_bg_store_daynight:
     scene bg store outside night
   return
 
+label show_bg_kitchen_daynight:
+  if daily_actions > 0:
+    scene bg kitchen day
+  else:
+    scene bg kitchen  night
+  return
+
+
 
 

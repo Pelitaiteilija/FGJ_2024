@@ -1,5 +1,6 @@
 label day_2:
   $ game_ui_stats_visible = True
+  hide hairball
 
   hemmo "*yawn* Tuesday, eh?"
   hemmo "Hmm, did I have anything I had to do, today?"

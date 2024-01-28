@@ -1,24 +1,22 @@
 label day_3:
-  narrator "It is morning, and you wake up refreshed."
+  scene bg bedroom day 
+  narrator "A huge truck drove by your window early in the morning, and you woke up to its loud engine noise."
+  narrator "Not the best way to wake up and start the day."
+  hemmo "Hm?"
 
-  with None
-  scene bg livingroom day 
-  show hemmo happy at left
-  with dissolve
+  scene bg livingroom day
+  narrator "You noticed you had received a letter, mixed in on a pile of magazines and ads next to the door."
+  narrator "They get delivered every Wednesday and Saturday, but usually it's just random litter."
+  narrator "You open the letter."
+  narrator "It's from someone calling themselves \"Hairy Harry\", and the contents were just as weird as the sender's name."
 
-  hemmo "I wonder if my pet Wuffeli has been a good boy?"
+  define harry = Character("Harry")
 
-  show hemmo happy at left
-  show placeholder wuffeli at topright:
+  harry "Take good care of that little hairball. "
+  harry "You'll be surprised to see what it will turn into, after a while..."
 
-  pet "wrrrwrwroffof r"
+  narrator "So this Hairy Harry apparently had something to do with this little fuzzball that  appeared the other day."
+  hemmo "That's weird. I'll need to figure out how I feel about all this."
+  hemmo "I also need to decide what I'd like to do today."
 
-  show hemmo shocked at left
-  show placeholder wuffeli at topright:
-
-  hemmo "o no - wait a minute"
-  hemmo "O NO this is even worse!"
-
-  # This ends the game.
-
-  jump scene_selector
+  return

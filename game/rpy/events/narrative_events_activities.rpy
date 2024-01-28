@@ -76,6 +76,11 @@ label nutflix_event_3:
   hemmo "Well, not that it was super good any way."
   return
 
+label nutflix_event_4:
+  hemmo "Eh, I don't feel like going out right now."
+  hemmo "I might just as well continue that one series. It was at a good part, too."
+  hemmo "I wonder which place that famous chef is going to wreck this time."
+
 #########################################################################
 #              PARK: JOGGING, AND PLAYING WITH THE PET
 #########################################################################
@@ -102,11 +107,15 @@ label random_jogging_event:
   else:
       $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_park_pos])
 
-  $ get_random_event(jogging_events, "default_jogging_event")
+  if renpy.random.random() < 0.5:
+    $ get_random_event(jogging_events, "default_jogging_event")
+  else:
+    call default_jogging_event
   return
 
 label default_jogging_event: 
-  hemmo "I went jogging. It was nice."
+  hemmo "I guess I 'll do some exercising. I'll go for a little jog for starters to warm up."
+  hemmo "I'll go for something more if I feel up for it."
 
   call show_bg_livingroom_daynight
   return
@@ -119,6 +128,11 @@ label jogging_event_1:
   call show_bg_livingroom_daynight
   return
 
+label jogging_event_2:
+  hemmo "I went jogging. It was nice."
+
+  call show_bg_livingroom_daynight
+  return
 
 label random_playing_with_pet_event:
   $ get_random_event(playing_with_pet_events, "default_playing_with_pet_event")
@@ -140,7 +154,10 @@ label default_playing_with_pet_event:
     hemmo "Well, it was still nice to catch some fresh air."
   return
 
-
 label playing_with_pet_event_1:
   narrator "You stayed home and played with [pet_name]!"
+  return
+
+label playing_with_pet_event_2:
+  narrator "I wonder how that little hairball likes this toy. Cats are known to like these, so it will be interesting to see how this turns out."
   return

@@ -34,7 +34,7 @@ init python:
     if len(available_events) > 0:
       # valitse eventti, poista se eventtilistasta
       chosen_event = renpy.random.choice(available_events)
-      print(f"Removing activated event '{chosen_event}' from list: '{events_list}'")
+      #print(f"Removing activated event '{chosen_event}' from list: '{events_list}'")
       events_list.remove(chosen_event)
       # varmista että valittu eventti on validi, ja jos on, kutsu sitä
       if chosen_event != "" and chosen_event != None:
@@ -69,5 +69,5 @@ init python:
       mood_score = 0
     elif mood_score >= len(pet_mood):
       mood_score = len(pet_mood) -1
-    print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
+    #print(f"Generated a random mood: {pet_mood[mood_score]} ({mood_score})")
     return pet_mood[mood_score]    

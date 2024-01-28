@@ -47,7 +47,7 @@ init python:
     # parameters are extracted as a list
     try: 
       parenthesis_index = action_string.find('(')
-      print("this is a test")
+      #print("this is a test")
       function_name = action_string[:parenthesis_index]
       parameters_string = action_string[parenthesis_index + 1:-1]
       parameters = [p.strip() for p in parameters_string.split(',')]
@@ -56,7 +56,8 @@ init python:
         func_to_call = globals()[function_name]
         func_to_call(*parameters)
     except Exception as e:
-      print(f"Error calling function '{function_name}' with parameters '{parameters}: {e}")
-      print(f"Original string: {action_string}")
-      if (function_name not in globals()):
-        print(f"{function_name} doesn't exist in globals!" )
+      pass
+      #print(f"Error calling function '{function_name}' with parameters '{parameters}: {e}")
+      #print(f"Original string: {action_string}")
+      #if (function_name not in globals()):
+      #  print(f"{function_name} doesn't exist in globals!" )

@@ -1,7 +1,7 @@
 label end_of_day:
   narrator "You're tired, and decide to go to bed"
-  hemmo "Alright, [pet_name], time to catch some sleep."
-  hemmo "Good night."
+  hemmo "*yawn* Guess I should go to bed since I'm so tired. New day tomorrow, and all that. "
+  hemmo "Good night, [pet_name]."
 
   $ EndCurrentDay()
   # pick an event, or start a normal day
@@ -10,6 +10,8 @@ label end_of_day:
 label scene_selector:
   if current_day == 2:
     call day_2
+  elif current_day == 3:
+    call day_3
   elif current_day >= 7:
     jump final_day
     return
