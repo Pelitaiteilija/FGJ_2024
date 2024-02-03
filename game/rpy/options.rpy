@@ -4,36 +4,6 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
-define gui.about = _p("""
-
-\nTrailer song
-\n{a=https://www.free-stock-music.com/mixaund-optimistic-inspirational.html}Hope - Mixaund{/a}
-
-\nBackground images:
-\nNoraneko Games
-\nJBH PRODS
-
-Audio
-
-(We didn't end up implementing audio in the game, this time.)
-\n-- {a=https://www.free-stock-music.com/sound-effects-library-spooky-ambience.html}Spooky Ambience - Sound Effects Library{/a}
-\n-- {a=https://www.free-stock-music.com/mixaund-dreamers.html}Dreamers - Mixaund{/a}
-\n-- {a=https://www.free-stock-music.com/corporate-music-zone-rise.html}Rise - Corporate Music Zone{/a}
-\n-- {a=https://www.free-stock-music.com/mixaund-optimistic-inspirational.html}Optimistic / Inspirational - Mixaund{/a}
-\n-- {a=https://www.free-stock-music.com/mixaund-feel.html}Feel - Mixaund{/a}
-\n-- {a=https://www.free-stock-music.com/corporate-music-zone-team-work.html}Team Work - Corporate Music Zone{/a}
-\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}Refreshing Dawn - JDSherbert{/a}
-\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}Corrupted Circuitry - JDSherbert{/a}
-\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}Streetlights - JDSherbert{/a}
-\n-- {a=https://www.free-stock-music.com/ron-gelinas-chill-beats-ill-be-there.html}I'll Be There - Ron Gelinas Chill Beats{/a}
-\n-- {a=https://davidkbd.itch.io/concerto-classical-music-turned-to-metal-assets-pack}Asturias, Suite espanola V (Albeniz) - DavidKBD{/a}
-\n-- {a=https://freesound.org/people/tommly./sounds/720130/}The Mirror - Tommly{/a}
-
-""")
-
-
-
-
 
 ## Basics ######################################################################
 
@@ -60,6 +30,33 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+\n(This game was developed as part of Finnish Game Jam 2024 by Team Visualazers)
+
+\nBackground images:
+\nNoraneko Games
+\nJBH PRODS
+
+\nHairball / Wuffeli:
+\nKromi
+
+\nThe player:
+\nAaKoo / AyKay
+
+\nStory:
+\nZamius
+
+\nAudio
+\n-- {a=https://www.free-stock-music.com/mixaund-dreamers.html}Dreamers - Mixaund{/a}
+\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}A Minor Distraction - JDSherbert{/a}
+\n-- {a=https://www.free-stock-music.com/corporate-music-zone-rise.html}Rise - Corporate Music Zone{/a}
+\n-- {a=https://www.free-stock-music.com/mixaund-optimistic-inspirational.html}Optimistic / Inspirational - Mixaund{/a}
+\n-- {a=https://www.free-stock-music.com/mixaund-feel.html}Feel - Mixaund{/a}
+\n-- {a=https://www.free-stock-music.com/corporate-music-zone-team-work.html}Team Work - Corporate Music Zone{/a}
+\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}Refreshing Dawn - JDSherbert{/a}
+\n-- {a=https://www.free-stock-music.com/ron-gelinas-chill-beats-ill-be-there.html}I'll Be There - Ron Gelinas Chill Beats{/a}
+\n-- {a=https://jdsherbert.itch.io/minigame-music-pack}Beach Vibes - JDSherbert{/a}
+\n-- {a=https://freesound.org/people/tommly./sounds/720130/}The Mirror - Tommly{/a}
+\n-- {a=https://freesound.org/people/awrmacd/sounds/387222/}Suspense - awrmacd{/a}
 """)
 
 
@@ -67,7 +64,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "MeMyselfHairball"
+define build.name = "Me, Myself & the Little Hairball"
 
 
 ## Sounds and music ############################################################

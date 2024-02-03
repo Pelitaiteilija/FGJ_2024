@@ -11,7 +11,7 @@ label new_day:
     random_home_pos = renpy.random.choice(random_home_positions)
 
     global hunger_food_points, fitness_points, happiness_points
-    hairball_emotion = get_random_pet_mood(hunger_food_points + fitness_points + happiness_points)
+    hairball_emotion = get_random_pet_mood(hunger_food_points + happiness_points)
 
   $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_home_pos])
   return

@@ -27,8 +27,7 @@ screen dynamic_actionbuttons_UI_screen():
         if button.category ==  dynamic_category:
           textbutton _(button.displaytext):
             id button.id
-            action If (daily_actions > 0, [ 
-              SetVariable("daily_actions", daily_actions-1),
+            action If (daily_actions > 0, [
               Function(call_custom_function, button.action_string ),
               Hide("dynamic_actionbuttons_UI_screen"),
               If (button.event_label != "", Function(renpy.call, button.event_label))

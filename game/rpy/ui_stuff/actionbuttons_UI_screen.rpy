@@ -59,10 +59,10 @@ screen actionbuttons_UI_screen():
           #action Show("dynamic_actionbuttons_UI_screen")
           if daily_actions <= 0:
             style "actionbuttons_overlay_button_disabled" 
-          else:         
+          else:
             action [
               SetVariable("dynamic_category", "eat"),
-              Show("dynamic_actionbuttons_UI_screen")
+              Jump("food")
             ]
 
         textbutton _("Clean stuff"):

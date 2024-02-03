@@ -30,15 +30,20 @@ init python:
 
   # used to randomize hairball's position in rooms
   random_home_pos = home_center
-
+  
   # used to randomize hairball's emotion
-  hairball_emotion = "angry"
+  persistent.random_pet_mood = None
 
+  persistent.random_pet_mood = renpy.random.choice(["furious", "angry", "sad", "neutral", "happy", "monster"])
+
+  hairball_emotion = persistent.random_pet_mood
+    
   def init_basic_variables():
     global current_day, max_daily_actions, daily_actions
     global hunger_food_points, happiness_points, fitness_points
     global pet_name
     global secret_cleanliness_points, secret_sleepiness_energy_points, bg_is_night
+    global random_pet_mood
 
     current_day = 1
     max_daily_actions = 3

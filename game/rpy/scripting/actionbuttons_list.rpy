@@ -27,14 +27,14 @@ init python:
       self.event_label = event_label
 
   text_buttons = [
-    TextButtonData("eat", "Cook at home", "actionbutton_eat_healthy", "AdjustStats(1, 1, 0)", "cook_at_home"),
+    TextButtonData("eat", "Cook at home", "actionbutton_eat_healthy", "AdjustStats(2, 1, 0)", "cook_at_home"),
     TextButtonData("eat", "Microwave food", "actionbutton_eat_convenience", "AdjustStats(1, 0, 0)", "microwave_food"),
-    TextButtonData("eat", "Fast food", "actionbutton_eat_trash", "AdjustStats(1, 2, -1)", "fast_food"),
-    TextButtonData("activity", "Browse the 'net", "actionbutton_activity_internets", "AdjustStats(0, 2, -2)", "random_internet_event"),
-    TextButtonData("activity", "Play with hairball", "actionbutton_activity_playing", "AdjustStats(0, 1, 0)", "random_playing_with_pet_event"),
-    TextButtonData("activity", "Jogging", "actionbutton_activity_jogging", "AdjustStats(0, 1, 2)", "random_jogging_event"),
+    TextButtonData("eat", "Unhealthy food", "actionbutton_eat_trash", "AdjustStats(2, 2, -1)", "fast_food"),
+    TextButtonData("activity", "Browse the net", "actionbutton_activity_internets", "AdjustStats(0, 1, -2)", "random_internet_event"),
+    TextButtonData("activity", "Play with hairball", "actionbutton_activity_playing", "AdjustStats(0, 1, 1)", "random_playing_with_pet_event"),
+    TextButtonData("activity", "Jogging", "actionbutton_activity_jogging", "AdjustStats(-1, 1, 2)", "random_jogging_event"),
     TextButtonData("activity", "Watch Nutflix", "actionbutton_activity_nutflix", "AdjustStats(0, 2, -2)", "random_nutflix_event"),
-    TextButtonData("clean", "Cleaning", "actionbutton_cleaning_cleaning", "AdjustStatsAndTrash(-1, 0, 1, -1)", "random_cleaning_event")
+    TextButtonData("clean", "Cleaning", "actionbutton_cleaning_cleaning", "AdjustStatsAndTrash(-1, 0, 1, -2)", "random_cleaning_event")
   ]
 
   for button in text_buttons:

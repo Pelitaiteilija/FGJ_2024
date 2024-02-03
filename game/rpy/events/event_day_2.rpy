@@ -1,24 +1,19 @@
 label day_2:
-  $ game_ui_stats_visible = True
+  $ game_ui_stats_visible = False
+  $ game_ui_visible = False
   hide hairball
 
-  hemmo "*yawn* Tuesday, eh?"
-  hemmo "Hmm, did I have anything I had to do, today?"
-  hemmo "Oh right, I had to wash the dishes. "
-  hemmo "I wonder what that hairball does in its free time..."
-  hemmo "Well, let's see if my new pet [pet_name] has been a good boy?"
-
-  show hairball furious at home_topright
-  with dissolve
-  
-
-  hairball "Wrrrwrwroffof wrrr!"
-
-  hemmo "What!"
-  hemmo "Oh no!"
-
-  with None
-  show hairball angry at home_center
+  scene bg bedroom day
   with fade
-  narrator "A few hectic moments later..."
+  play music "Aamu 2 - Rise.mp3"
+  narrator "*yawn* Tuesday, eh?"
+  narrator "Hmm, did I have anything I had to do, today?"
+  narrator "Oh right, I had to wash the dishes. "
+  narrator "I wonder what that hairball does in its free time..."
+
+  scene bg livingroom day
+  with fade
+  $ renpy.show(f"hairball {hairball_emotion}", at_list=[random_home_pos])
+  narrator "Could spend some time with it to find out."
+ 
   return

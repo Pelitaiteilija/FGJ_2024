@@ -5,33 +5,84 @@ init python:
     global food_events
     food_events = []
 
+label food:
+  call show_bg_store_daynight
+  with fade
+  pause 0.5
+  scene bg store inside
+  with dissolve
+
+  menu:
+    hemmo "Should I cook at home something, get a microwave meal or eat something delicious at restaurant?"
+
+    "Cook at home":
+      call food_positive
+      jump cook_at_home
+
+    "Microwave meal":
+      call food_neutral
+      jump microwave_food
+
+    "Eat at restaurant":
+      call food_negative
+      jump fast_food
+
+###########################################
+
+label food_positive:
+  $ hunger_food_points += 2
+  $ happiness_points += 1
+  return
+
+label food_neutral:
+  $ hunger_food_points += 2
+  return
+
+label food_negative:
+  $ hunger_food_points += 2
+  $ happiness_points += 2
+  $ fitness_points -= 1
+  return
+
+###########################################
+
 label cook_at_home:
   call show_bg_kitchen_daynight
-  if daily_actions == 2:
+  with fade
+  if daily_actions == 3:
     hemmo "I think I'll cook something nice for breakfast."
     hemmo "An omelette, perhaps?"
   else:
-    narrator "You make a simple home-cooked meal."
+    narrator "I wanted to make a simple home-cooked meal this time."
+    narrator "It's better and cheaper too, even though it can be a pain sometimes."
+  $ daily_actions -= 1
   call show_bg_livingroom_daynight
-  return
+  with dissolve
+  jump scene_make_a_choice
 
 label microwave_food:
-  call show_bg_store_daynight
+  #call show_bg_store_daynight
+  #with fade
   if renpy.random.random() < 0.5:
-    narrator "You grabbed a small and convenient ready-made meal from the local grocery store."
-    hemmo "Microwave food isn't the best, but it does keep the hunger away."
+    narrator "I grabbed a small and convenient ready-made meal from the local grocery store."
+    hemmo "Microwave food isn't the best, but it does keep the hunger away more or less."
+    hemmo "At least it's quite affordable compared to home-made meal or restaurant dishes money- and timewise."
   else:
-    hemmo "I'm up for some \"roiskeläppä\", as we say in Finland."
-    hemmo "For a cheap microwave pizza, they have a decent flavor. "
+    narrator "I'm up for some \"mudflap\", as they call it in Finland."
+    narrator "For a cheap microwave pizza, they seem to have a decent flavor. Might wanna try other flavors too."
+  $ daily_actions -= 1
   call show_bg_livingroom_daynight
-  return
+  with dissolve
+  jump scene_make_a_choice
 
 label fast_food:
   scene bg restaurant
-  hemmo "Ooh! They have some fresh croissants and other delicious stuff on sale! Gotta get those!"
-  narrator "You got yourself some fast food."
-  narrator "It disappears in what feels like just a few moments, but you still feel like you could've gone for more."
-  hemmo "I'm not sure if this was the best choice I could've made."
+  with fade
+  hemmo "Ooh! They have some fresh croissants and other delicious stuff on sale! Omg, mochies too?!"
+  narrator "I ate a tasty chicken-ranch bagel and some seasonal vanilla-cream donuts for dessert. They were SO damn good, omg!"
+  hemmo "I'm not sure if this was the best choice I could've made, but at least my taste buds are satisfied."
+  $ daily_actions -= 1  
   call show_bg_livingroom_daynight
-  return
+  with fade
+  jump scene_make_a_choice
 

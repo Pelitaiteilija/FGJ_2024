@@ -7,7 +7,7 @@ transform home_kitchen_table:
   xzoom 1
   yzoom 1
   xcenter 0.40
-  ycenter 0.445
+  ycenter 0.52
   rotate 0
 
 transform home_right:

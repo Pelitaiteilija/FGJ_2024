@@ -23,7 +23,7 @@ init python:
     current_day += 1
     #reset daily actions
     daily_actions = max_daily_actions
-    renpy.call("new_day")
+    #renpy.call("new_day")
 
   def hide_dynamic_actionbuttons_UI_screen():
     renpy.hide("dynamic_actionbuttons_UI_screen")
