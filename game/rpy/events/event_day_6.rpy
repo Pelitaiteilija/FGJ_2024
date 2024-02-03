@@ -7,12 +7,12 @@ label day_6:
     scene black
     with fade
     stop music
-    play audio "Scratch.mp3"
+    play audio "Scratch.wav"
     pause 1.0
 
     scene bg bedroom night
     with fade
-    play music "Suspense.wav"
+    play music "Suspense.mp3"
     pause 1.0
 
     narrator "Morning already?"
