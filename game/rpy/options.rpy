@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "1.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -74,7 +74,9 @@ define build.name = "Me-Myself-and-the-Little-Hairball"
 ## appropriate mixer.
 
 define config.has_sound = True
+define config.default_sfx_volume = 0.75
 define config.has_music = True
+define config.default_music_volume = 0.5
 define config.has_voice = True
 
 

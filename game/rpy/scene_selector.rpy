@@ -23,7 +23,6 @@ label scene_selector:
     call day_6
   elif current_day == 7:
     jump final_day
-    return
   #else:
     #call basic_day
 
