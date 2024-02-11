@@ -23,7 +23,7 @@ init python:
 
 
 label random_internet_event:
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight
   with dissolve
   $ get_random_event(internet_events, "default_internet_event")
   return
@@ -64,7 +64,7 @@ label internet_event_3:
 #########################################################################
 
 label random_nutflix_event:
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_1
   with dissolve
   $ get_random_event(nutflix_events, "default_nutflix_event")
   return
@@ -119,8 +119,8 @@ label set_random_park_position:
 #  SEE EXAMPLE USAGE ON default_jogging_event
 ###
 label random_jogging_event:
-  call show_bg_park_daynight
-  call set_random_park_position
+  call show_bg_park_daynight from _call_show_bg_park_daynight
+  call set_random_park_position from _call_set_random_park_position
 
   with fade
   $ global random_park_pos
@@ -133,7 +133,7 @@ label random_jogging_event:
   if renpy.random.random() < 0.5:
     $ get_random_event(jogging_events, "default_jogging_event")
   else:
-    call default_jogging_event
+    call default_jogging_event from _call_default_jogging_event
   return
 
 label default_jogging_event: 
@@ -141,7 +141,7 @@ label default_jogging_event:
   hemmo "Maybe a little jog for starters to warm up."
   hemmo "I'll go for something more if I feel up for it."
   $ daily_actions -= 1
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_2
   with fade
   return
 
@@ -150,14 +150,14 @@ label jogging_event_1:
   hemmo "Wow, I had forgotten I even had these running shoes."
   hemmo "It's been a while, huh."
   $ daily_actions -= 1
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_3
   with fade
   return
 
 label jogging_event_2:
   narrator "I went for jogging. It feels good to be in the nature and burn some calories sometimes."
   $ daily_actions -= 1
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_4
   with fade
   return
 
@@ -167,8 +167,11 @@ label random_playing_with_pet_event:
 
 label default_playing_with_pet_event:
   
-  call show_bg_park_daynight
+  call show_bg_park_daynight from _call_show_bg_park_daynight_1
+  call set_random_park_position
+  with dissolve
   if daily_actions > 1:
+    $ global random_park_pos
     $ flipped = renpy.random.random() < 0.5
     if flipped:
       $ renpy.show(f"hairball {persistent.random_pet_mood} flipped", at_list=[random_park_pos])
@@ -178,7 +181,7 @@ label default_playing_with_pet_event:
     hemmo "That hairball sure got some energy. Just look at that speed and dashing everywhere where happens to be something new to explore."
     narrator "I wonder if normal pet owners feels the same sometimes."
 
-    call show_bg_livingroom_daynight
+    call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_5
     with fade
     narrator "When we came back, [pet_name] was so hungry that it started to bite the legs of sofa and tables."
     hemmo "For crying out loud..."
@@ -187,14 +190,14 @@ label default_playing_with_pet_event:
     narrator "We decided to go to the park even though it was quite late already."
     narrator "It was very dark and silent. No traffic to make noise or other people chitchatting constantly."
     narrator "It was peaceful now that I think about it. Perfect time for [pet_name] to explore without disturbing others."
-    call show_bg_livingroom_daynight
+    call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_6
     with fade
     hemmo "Well, it was still nice to catch some fresh air."
     $ daily_actions -= 1
   return
 
 label playing_with_pet_event_1:
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_7
   with dissolve
   narrator "I stayed home and played with [pet_name] for a bit to learn more about it and its behavior."
   narrator "It truly resembled sort of mix both cats and dogs."
@@ -204,7 +207,7 @@ label playing_with_pet_event_1:
   return
 
 label playing_with_pet_event_2:
-  call show_bg_livingroom_daynight
+  call show_bg_livingroom_daynight from _call_show_bg_livingroom_daynight_8
   with dissolve
   narrator "I wonder how that little hairball likes this toy I bought recently."
   narrator "Cats are known to like these, so it will be interesting to see how this turns out."

@@ -5,11 +5,6 @@ label final_day:
     jump true_ending
   else:
     jump bad_ending
-
-
-  narrator "The End"
-  return
-  return
   
 
 label good_ending:
@@ -130,7 +125,7 @@ label bad_ending:
   narrator "I then waited one and half minutes for it to be reheated and went to the sofa."
   narrator "I turned my TV on and started Nutflix-service."
   
-  play audio "Scratch.wav"
+  play sound "Scratch.wav"
   narrator "That little hairball tip topped itself over to the living room as well and started scratching walls and other furniture."
   narrator "It turned out to be a little devil if you ask me."
   narrator "Disciple was useless to it, so I had given up on training it altogether and just let it be a free loafer in the household."

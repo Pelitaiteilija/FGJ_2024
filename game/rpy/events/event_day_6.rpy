@@ -7,7 +7,7 @@ label day_6:
     scene black
     with fade
     stop music
-    play audio "Scratch.wav"
+    play sound "Scratch.wav"
     pause 1.0
 
     scene bg bedroom night
@@ -22,7 +22,7 @@ label day_6:
     narrator "It sounded like scratching furniture, but I wasn't sure if it was that or something else."
     narrator "I tried to ignore it at first, but then I heard it again.{nw}" 
     
-    play audio "Muki.wav"
+    play sound "Muki.wav"
     
     extend "\n{w}This time from the kitchen."
     narrator "Now something hard dropped to the ground. {w}It totally caught me off guard as I jumped a bit even in my bed."
@@ -31,7 +31,7 @@ label day_6:
     scene bg kitchen night
     with dissolve
     pause 1.0
-    play audio "Light-switch.wav"
+    play sound "Light-switch.wav"
     scene bg kitchen day
 
     narrator "When I switched the lights on, {nw}"
@@ -45,7 +45,7 @@ label day_6:
     show punasilmat:
         xalign 0.5
         yalign 0.75
-    play audio "Jumpscare.wav"
+    play sound "Jumpscare.wav"
     with vpunch
 
     narrator "2 big glowing red eyes appeared in my vision and I let out a small shout while jumping back panically."
@@ -59,7 +59,7 @@ label day_6:
         yalign .95
     with dissolve
     robo "{w=1.0}"
-    hemmo "IT WAS MY ROBO VACUUM?!"
+    hemmo "IT WAS MY ROOMBA?!"
     narrator "I should have guessed! What or who else could it have been otherwise?!"
     narrator "My little hairball was still sleeping soundly in its bed after all, so it couldn't be it."
     
